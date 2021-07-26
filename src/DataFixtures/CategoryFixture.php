@@ -9,7 +9,7 @@ class CategoryFixture extends BaseFixture
 {
     public function loadData(ObjectManager $manager)
     {
-        $this->createMany(Category::class, 10, function(Category $category, $count) {
+        $this->createMany(Category::class, 2, function(Category $category, $count) {
             $categories = ['Children', 'Fiction'];
             $category->setCategoryName($categories[$count]);
         });
