@@ -29,11 +29,23 @@ use Doctrine\ORM\Mapping as ORM;
      *
      * @ORM\Column(type="text")
      */
-     public string $categoryName;
+     private string $categoryName;
 
 
      public function getId(): ?int
     {
         return $this->id;
     }
+
+     public function getCategoryName(): string
+     {
+         return $this->categoryName;
+     }
+
+     public function setCategoryName(string $categoryName): Category
+     {
+         $this->categoryName = $categoryName;
+
+         return $this;
+     }
 }
