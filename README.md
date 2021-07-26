@@ -3,6 +3,9 @@
 ## Install dependencies
 `composer install`
 
+## Sample data
+`php bin/console doctrine:fixtures:load`
+
 ## Development server
 
 Run `php -S 127.0.0.1:8000 -t public` for a dev server. Navigate to `http://localhost:8000/api`.
