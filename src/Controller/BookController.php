@@ -7,10 +7,12 @@ use App\Entity\Book;
 use App\Repository\BookRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Attribute\AsController;
 
+#[AsController]
 class BookController extends AbstractController
 {
-    private $bookRepository;
+    private BookRepository $bookRepository;
 
     public function __construct(BookRepository $bookRepository)
     {

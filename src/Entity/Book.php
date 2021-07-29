@@ -5,6 +5,7 @@ namespace App\Entity;
 
 use ApiPlatform\Core\Annotation\ApiResource;
 use App\Controller\BookController;
+use App\Dto\BookOutput;
 use Symfony\Component\Serializer\Annotation\Groups;
 use Doctrine\Common\Collections\ArrayCollection;
 use ApiPlatform\Core\Annotation\ApiProperty;
@@ -18,7 +19,7 @@ use App\Repository\BookRepository;
  */
 #[ApiResource(normalizationContext: ['groups' => ['book', 'cart-book']])]
 
-// collectionOperations: ['custom-action' => ['method'=> 'GET', 'deserialize'=>false,  'path'=>"/books/category", "controller"=>BookController::class]]
+// collectionOperations: ['get_books_by_category' => ['method'=> 'GET', 'deserialize'=>false,  'path'=>'/books/pp/{category}', "controller"=>BookController::class]],
 class Book
 {
     /**

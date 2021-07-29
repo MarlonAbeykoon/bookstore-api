@@ -18,4 +18,9 @@ class InvoiceRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Invoice::class);
     }
+
+    public function saveInvoice(): void
+    {
+
+    }
 }
