@@ -9,15 +9,23 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use ApiPlatform\Core\Annotation\ApiProperty;
 use ApiPlatform\Core\Annotation\ApiSubresource;
+use App\Repository\CartItemRepository;
 
 /**
  * A Cart Item.
  *
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass=CartItemRepository::class)
  */
 #[ApiResource(normalizationContext: ['groups' => ['cart-book']])]
 class CartItem
 {
+    public const CHILDREN = 'Children';
+    public const FICTION = 'Fiction';
+
+    public static array $categories = [
+        self::CHILDREN,
+        self::FICTION ,
+    ];
     /**
      * The id of this cart item.
      *
